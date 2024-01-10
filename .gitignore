@@ -1,0 +1,22 @@
+db.sqlite3
+
+venv/
+.env
+
+.vscode/
+.idea/
+*.sublime-*
+
+# Ignore .env file containing sensitive credentials
+.env
+
+# Ignore Docker Compose files
+docker-compose.yml
+docker-compose.dev.yml
+docker-compose.prod.yml
+
+# Ignore SQLite database
+*.sqlite3
+
+# Ignore migration files if using South or Django Migrations
+/migrations/
