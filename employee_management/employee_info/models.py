@@ -20,6 +20,7 @@ class Employee(models.Model):
     email = models.EmailField(null=True, unique=True)
     contact_number = models.CharField(max_length=20, null=True)
     address = models.CharField(max_length=2000, null=True)
+    roll = models.CharField(max_length=2000, null=True)
     gender = models.CharField(max_length=1, choices=GENDER_CHOICES)
     department = models.ForeignKey(Department, on_delete=models.SET_NULL, null=True)
     hire_date = models.DateField()
