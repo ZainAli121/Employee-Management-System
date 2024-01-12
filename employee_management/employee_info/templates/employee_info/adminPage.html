@@ -1,10 +1,5 @@
 {% extends 'main.html' %}
-
 {% block content %}
-
-   
-<!-- <div class="div"> -->
-  
   <span class="span-3">
     <div class="div-5">Dashboard</div>
     <img
@@ -27,15 +22,17 @@
           class="img-9"
         />
         <span class="span-5">
-          <div class="div-8">8:02:09 AM</div>
+          <div class="div-8">{% now "h:i:s A" %}</div>
           <div class="div-9">Realtime Insight</div>
-        </span>
+      </span>
+      
       </div>
       <div class="div-10">
         Today:
         <br />
-        18th November 2023
-      </div>
+        {% now "jS F Y" %}
+    </div>
+    
       <span class="span-6"><a href="{% url 'attendence' %}">View Attendence</a></span>
     </span>
     <div class="div-11">
@@ -104,7 +101,7 @@
       </div>
       <div class="div-23">
         <div class="div-24">
-          <div class="column">
+          <div class="columnn">
             <span class="span-17">
               <span class="span-18">
                 <div class="div-25">{{late_count}}</div>
@@ -230,87 +227,6 @@
           </div>
         </div>
       </div>
-    </div>
-  </div>
-  <div class="div-54">
-    <span class="span-31">
-      <div class="div-55">Attendance Overview</div>
-      <span class="span-32">
-        <img
-          loading="lazy"
-          src="https://cdn.builder.io/api/v1/image/assets/TEMP/179e476cb59e375ed735fb73fc72069c347bbba4a1bea87b0dbb638c5b8e5a65?apiKey=bfa64ff62ab944988c7f3edf8c6c48de&"
-          class="img-25"
-        />
-        <div class="div-56">Quick Search...</div>
-      </span>
-      <span class="span-33">
-        <img
-          loading="lazy"
-          srcset="https://cdn.builder.io/api/v1/image/assets/TEMP/55d15192-bea3-45c4-9451-d725a0a39503?apiKey=bfa64ff62ab944988c7f3edf8c6c48de&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/55d15192-bea3-45c4-9451-d725a0a39503?apiKey=bfa64ff62ab944988c7f3edf8c6c48de&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/55d15192-bea3-45c4-9451-d725a0a39503?apiKey=bfa64ff62ab944988c7f3edf8c6c48de&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/55d15192-bea3-45c4-9451-d725a0a39503?apiKey=bfa64ff62ab944988c7f3edf8c6c48de&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/55d15192-bea3-45c4-9451-d725a0a39503?apiKey=bfa64ff62ab944988c7f3edf8c6c48de&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/55d15192-bea3-45c4-9451-d725a0a39503?apiKey=bfa64ff62ab944988c7f3edf8c6c48de&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/55d15192-bea3-45c4-9451-d725a0a39503?apiKey=bfa64ff62ab944988c7f3edf8c6c48de&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/55d15192-bea3-45c4-9451-d725a0a39503?apiKey=bfa64ff62ab944988c7f3edf8c6c48de&"
-          class="img-26"
-        />
-        <div class="div-57">29 July 2023</div>
-      </span>
-      <span class="span-34">
-        <img
-          loading="lazy"
-          src="https://cdn.builder.io/api/v1/image/assets/TEMP/4a6e9dfe36fdc869e494b36de60b97faab6395691c8311b8c05dcbe91d92b292?apiKey=bfa64ff62ab944988c7f3edf8c6c48de&"
-          class="img-27"
-        />
-        <div class="div-58">View Attendence</div>
-      </span>
-    </span>
-    <div class="div-59"></div>
-    <div class="div-60">
-      <span class="span-35">
-        <div class="div-61">ID</div>
-        <div class="div-62">Employee</div>
-      </span>
-      <span class="span-36">
-        <div class="div-63">Role</div>
-        <img
-          loading="lazy"
-          src="https://cdn.builder.io/api/v1/image/assets/TEMP/c1d83c0242bd1e5eaaf8b1477b050b505d31a10fcf38e033092a4f1400d75124?apiKey=bfa64ff62ab944988c7f3edf8c6c48de&"
-          class="img-28"
-        />
-      </span>
-      <span class="span-37">
-        <div class="div-64">Department</div>
-        <img
-          loading="lazy"
-          src="https://cdn.builder.io/api/v1/image/assets/TEMP/584937d7bc0c0ac9a399dbaf3857f2cd9c834b903f3d4c477e64b63610564a7c?apiKey=bfa64ff62ab944988c7f3edf8c6c48de&"
-          class="img-29"
-        />
-        <div class="div-65">Date</div>
-      </span>
-      <span class="span-38">
-        <div class="div-66">Status</div>
-        <img
-          loading="lazy"
-          src="https://cdn.builder.io/api/v1/image/assets/TEMP/f8c59cd549e58839296064856873e2f79995da769b6652c2a42b8678bdd283be?apiKey=bfa64ff62ab944988c7f3edf8c6c48de&"
-          class="img-30"
-        />
-      </span>
-      <span class="span-39">
-        <div class="div-67">Check-in</div>
-        <img
-          loading="lazy"
-          src="https://cdn.builder.io/api/v1/image/assets/TEMP/d1cfdb6d8870faf810674f4d072bb00912e2335f54765fb260f55547082067f1?apiKey=bfa64ff62ab944988c7f3edf8c6c48de&"
-          class="img-31"
-        />
-        <div class="div-68">Check-out</div>
-        <img
-          loading="lazy"
-          src="https://cdn.builder.io/api/v1/image/assets/TEMP/ec0b160db2555a7a2a75861931bd24efa48c53e151b1344f05618a530184ded6?apiKey=bfa64ff62ab944988c7f3edf8c6c48de&"
-          class="img-32"
-        />
-        <div class="div-69">Work hours</div>
-        <img
-          loading="lazy"
-          src="https://cdn.builder.io/api/v1/image/assets/TEMP/3be6a63f0a81fad0d4aa8f73429597af89c6a66169d6b6886cb74ee25f357cd9?apiKey=bfa64ff62ab944988c7f3edf8c6c48de&"
-          class="img-33"
-        />
-      </span>
     </div>
   </div>
 </div>
