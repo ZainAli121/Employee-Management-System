@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import *
+from attendence.models import *
 # Create your views here.
 
 def attendence(request):
@@ -8,3 +9,4 @@ def attendence(request):
         attendence.work_hours = attendence.calculate_work_hours()
     context = {'attendences' : attendences}
     return render(request, 'attendence/attendenceList.html', context)
+
