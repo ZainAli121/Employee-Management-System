@@ -25,6 +25,16 @@
             src="https://cdn.builder.io/api/v1/image/assets/TEMP/92603295554bb55d0321638a108d08eab66ae71afc7d2891797656842d908c5e?apiKey=bfa64ff62ab944988c7f3edf8c6c48de&"
             class="img-4"
           />
+          {% if request.user.is_authenticated %}
+          <a href="{% url 'login' %}">Logout</a>
+          {% else %}
+          <a href="{% url 'login' %}">Login</a>
+          {% endif %}
+          <!-- <a href="{% url 'login' %}"><img
+            loading="lazy"
+            src="{% static 'images/loginIcon.svg' %}"
+            class="img-4"
+          /></a> -->
           <img
             loading="lazy"
             src="https://cdn.builder.io/api/v1/image/assets/TEMP/b3385516998ed277a27e05ca1874fc865ac7942dfecf7f373e0338644b166346?apiKey=bfa64ff62ab944988c7f3edf8c6c48de&"
