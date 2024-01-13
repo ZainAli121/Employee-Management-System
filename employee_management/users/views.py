@@ -20,13 +20,16 @@ def loginUser(request):
         username = request.POST.get('username')
         password = request.POST.get('password')
         user = User.objects.get(username=username)
-        print(user)
-        print(password)
         user = authenticate(request=request, username=username, password=password)
         print(user)
-        if user is not None:
+        if user is not None and user.is_employee:
+            print('employee')
             login(request, user)
-            return redirect('employees')
+            print('employee')
+            return redirect('employees_site')
+        elif user is not None and user.is_admin:
+            login(request, user)
+            return redirect('admin_site')
         else:
             return render(request, 'users/login.html')
         

@@ -1,7 +1,7 @@
 {% load static %}
 <div class="div">
     <div class="div-2">
-        <a href="{% url 'employees' %}"><img
+        <a href="{% url 'admin_site' %}"><img
           loading="lazy"
           srcset="https://cdn.builder.io/api/v1/image/assets/TEMP/e01082c1f000d9fad25b2b728893e38561deab14a52ce69ff2c447ce2fdc4614?apiKey=bfa64ff62ab944988c7f3edf8c6c48de&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/e01082c1f000d9fad25b2b728893e38561deab14a52ce69ff2c447ce2fdc4614?apiKey=bfa64ff62ab944988c7f3edf8c6c48de&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/e01082c1f000d9fad25b2b728893e38561deab14a52ce69ff2c447ce2fdc4614?apiKey=bfa64ff62ab944988c7f3edf8c6c48de&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/e01082c1f000d9fad25b2b728893e38561deab14a52ce69ff2c447ce2fdc4614?apiKey=bfa64ff62ab944988c7f3edf8c6c48de&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/e01082c1f000d9fad25b2b728893e38561deab14a52ce69ff2c447ce2fdc4614?apiKey=bfa64ff62ab944988c7f3edf8c6c48de&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/e01082c1f000d9fad25b2b728893e38561deab14a52ce69ff2c447ce2fdc4614?apiKey=bfa64ff62ab944988c7f3edf8c6c48de&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/e01082c1f000d9fad25b2b728893e38561deab14a52ce69ff2c447ce2fdc4614?apiKey=bfa64ff62ab944988c7f3edf8c6c48de&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/e01082c1f000d9fad25b2b728893e38561deab14a52ce69ff2c447ce2fdc4614?apiKey=bfa64ff62ab944988c7f3edf8c6c48de&"
           class="img"
@@ -46,9 +46,9 @@
             class="img-6"
           />
           <div class="div-4">
-            Admin
+            {{request.user}}
             <br />
-            admin@domain.in
+            {{request.user.email}}
           </div>
         </span>
       </div>
