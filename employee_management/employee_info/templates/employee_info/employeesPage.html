@@ -2,6 +2,170 @@
 
 {% block content %}
 
+<span class="span-3">
+    <div class="div-5">Dashboard</div>
+    <img
+      loading="lazy"
+      src="https://cdn.builder.io/api/v1/image/assets/TEMP/8fb2189d71c8f3fbeed87dc847b71965b75b717a588a17c5331769120d1e3fb7?apiKey=bfa64ff62ab944988c7f3edf8c6c48de&"
+      class="img-7"
+    />
+  </span>
+  <div class="div-6">
+    <img
+      loading="lazy"
+      src="https://cdn.builder.io/api/v1/image/assets/TEMP/f3b885b192a1eec4fb892edc77490ccb4531e5854d69058f2b5a0bc0eaf5d8cf?apiKey=bfa64ff62ab944988c7f3edf8c6c48de&"
+      class="img-8"
+    />
+    <span class="span-4">
+      <div class="div-7">
+        <img
+          loading="lazy"
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/9f08fa63f273a28fbb82ff0a9e8f78561e1772fc560ebfd98e7860ca13cb5555?apiKey=bfa64ff62ab944988c7f3edf8c6c48de&"
+          class="img-9"
+        />
+        <span class="span-5">
+          <div class="div-8">{% now "h:i:s A" %}</div>
+          <div class="div-9">Realtime Insight</div>
+      </span>
+      
+      </div>
+      <div class="div-10">
+        Today:
+        <br />
+        {% now "jS F Y" %}
+    </div>
+    
+      <span class="span-6"><a href="{% url 'attendence' %}">View Attendence</a></span>
+    </span>
+    <div class="leave-container">
+        <div class="leave-box sick">
+            <h2>Sick Leave</h2>
+            <p>5 days</p>
+        </div>
+        <div class="leave-box casual">
+            <h2>Casual Leave</h2>
+            <p>3 days</p>
+        </div>
+        <div class="leave-box earned">
+            <h2>Earned Leave</h2>
+            <p>10 days</p>
+        </div>
+        <div class="leave-box adjusted">
+            <h2>Adjusted Leave</h2>
+            <p>2 days</p>
+        </div>
+        <div class="leave-box unpaid">
+            <h2>Unpaid Leave</h2>
+            <p>1 day</p>
+        </div>
+        <div class="leave-box half-day">
+            <h2>Half-day Leave</h2>
+            <p>4 instances</p>
+        </div>
+    </div>
+  </div>
+  <div class="div-34">
+    <div class="div-35">
+      <div class="column-6">
+        <img
+          loading="lazy"
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/36c24d67d5a1719264e04a9e9e653930457dde73ccbd771d897afdb1d5b1b692?apiKey=bfa64ff62ab944988c7f3edf8c6c48de&"
+          class="img-21"
+        />
+      </div>
+      <div class="column-7">
+        <div class="div-36">
+          <span class="span-26">
+            <div class="div-37">Weekly Attendance</div>
+            <img
+              loading="lazy"
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/5e205ca405cfc35723717955bc10be121c7a1154cbb9bfd2e450cc7ba568ad4b?apiKey=bfa64ff62ab944988c7f3edf8c6c48de&"
+              class="img-22"
+            />
+          </span>
+          <span class="span-27">
+            <div class="div-38">100%</div>
+            <img
+              loading="lazy"
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/837edeb2dd1bf6eb5eac95bcfad48a8b3714504946e1a158efacdaed92238ad3?apiKey=bfa64ff62ab944988c7f3edf8c6c48de&"
+              class="img-23"
+            />
+          </span>
+          <div class="div-39">
+            <img
+              loading="lazy"
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/76e25091de3c5435a739f014a5f3b9be858c852a78eae63ea79511883b69aa2c?apiKey=bfa64ff62ab944988c7f3edf8c6c48de&"
+              class="img-24"
+            />
+            86%
+          </div>
+          <div class="div-41">
+            <span class="span-28">
+              <div class="div-42">80%</div>
+              <div class="div-43">
+                <span class="span-29">
+                  <div class="div-44">60%</div>
+                  <div class="div-45">
+                    <span class="span-30">
+                      <div class="div-46">40%</div>
+                      <div class="div-47">20%</div>
+                      <div class="div-48">0</div>
+                    </span>
+                    <div class="div-49"></div>
+                  </div>
+                </span>
+                <div class="div-50"></div>
+              </div>
+            </span>
+            <div class="div-51"></div>
+            <div class="div-52"></div>
+            <div class="div-53"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
+<style>
+    body {
+     font-family: Arial, sans-serif;
+     margin: 0;
+     padding: 0;
+     background-color: #f4f4f4;
+ }
+ 
+ .leave-container {
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: space-around;
+ }
+ 
+ .leave-box {
+     width: calc(30% - 50px);
+     margin: 10px;
+     background-color: #fff;
+     padding: 20px;
+     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+     text-align: center;
+ }
+ 
+ .sick { background-color: #fff; }
+ .casual { background-color: #fff; }
+ .earned { background-color: #fff; }
+ .adjusted { background-color: #fff; }
+ .unpaid { background-color: #fff; }
+ .half-day { background-color: #fff; }
+ 
+ .leave-box h2 {
+     color: #012c71;
+ }
+ 
+ .leave-box p {
+     color: #012c71;
+ }
+ 
+
+ </style>
 
 {% endblock content %}
