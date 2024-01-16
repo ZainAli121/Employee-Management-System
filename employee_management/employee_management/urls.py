@@ -7,6 +7,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('dashboard/', include('employee_info.urls')),
     path('attendence/', include('attendence.urls')),
+    path('apply_leave/', include('leave_requests.urls')),
     path('', include('users.urls')),
 ]
 

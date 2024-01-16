@@ -1,0 +1,77 @@
+{% extends "main.html" %}
+
+{% block content %}
+<div class="wrap">
+    <form action="" method="post">
+        {% csrf_token %}
+        <label for="start_date">Start Date:</label>
+        <input type="date" name="start_date" id="start_date" required>
+
+        <label for="end_date">End Date:</label>
+        <input type="date" name="end_date" id="end_date" required>
+
+        <label for="days_count">Days Count:</label>
+        <input type="number" name="days_count" id="days_count" required>
+        <label for="leave_type">Leave Type:</label>
+        <select name="leave_type" id="leave_type">
+            {% for choice in leave_types %}
+                <option value="{{ choice.0 }}">{{ choice.1 }}</option>
+            {% endfor %}
+        </select>
+
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+<style>
+    .wrap {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 70vh;
+    }
+
+    form {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 400px;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 8px;
+    }
+
+    input, select {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 16px;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+    }
+
+    button {
+        background-color: #4caf50;
+        color: #fff;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    button:hover {
+        background-color: #45a049;
+    }
+</style>
+{% endblock content %}
