@@ -51,7 +51,7 @@ def admin_employees_site(request):
     else:
         return render(request, 'users/login.html')
     
-
+@login_required(login_url='login')
 def employees_site(request):
     user = request.user
     if user.is_employee:

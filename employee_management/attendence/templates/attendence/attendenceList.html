@@ -1,6 +1,7 @@
 {% extends "main.html" %}
 
 {% block content %}
+{% if page == 'admin' %}
 <div class="table-container">
     <table class="table">
       <thead>
@@ -37,8 +38,45 @@
   </div>
   
   <a href="#" class="view-attendance">View Attendance</a>
+  {% else %}
+  <div class="table-container">
+    <table class="table">
+      <thead>
+        <tr>
+          <th class="th">ID</th>
+          <th class="th">Employee</th>
+          <th class="th">Role</th>
+          <th class="th">Department</th>
+          <th class="th">Date</th>
+          <th class="th">Status</th>
+          <th class="th">Check-in</th>
+          <th class="th">Check-out</th>
+          <th class="th">Work hours</th>
+        </tr>
+      </thead>
+      {% for attendance in attendences  %}
+      <tbody>
+        <!-- Repeat the following structure for each employee -->
+        <tr class="tr">
+          <td class="td">{{attendance.employee.id}}</td>
+          <td class="td">{{attendance.employee.first_name}} {{attendance.employee.last_name}}</td>
+          <td class="td">{{attendance.employee.roll}}</td>
+          <td class="td">{{attendance.employee.department}}</td>
+          <td class="td">{{attendance.date}}</td>
+          <td class="td">{{attendance.status}}</td>
+          <td class="td">{{attendance.time_in}}</td>
+          <td class="td">{{attendance.time_out}}</td>
+          <td class="td">{{attendance.work_hours}}</td>
+        </tr>
+        <!-- Repeat the structure above for each employee -->
+      </tbody>
+      {% endfor %}
+    </table>
+  </div>
   
-
+  <a href="#" class="view-attendance">View Attendance</a>
+  
+  {% endif %}
   <style>
     /* Reset some default styles */
 body, h1, h2, p, ul, li {

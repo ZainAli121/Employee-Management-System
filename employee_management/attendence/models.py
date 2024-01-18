@@ -19,4 +19,4 @@ class Attendence(models.Model):
             return None
 
     def __str__(self):
-        return self.employee.first_name + " " + str(self.date) + " " + str(self.time_in) + " " + str(self.time_out) + " " + self.status
+        return self.employee.first_name + " " + str(self.date)
