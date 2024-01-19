@@ -54,7 +54,7 @@ def admin_employees_site(request):
 @login_required(login_url='login')
 def employees_site(request):
     user = request.user
-    if user.is_employee:
+    if user.is_employee and not user.is_admin:
         employee = Employee.objects.get(user=user)
         # calculate the total number of sick leaves
         sick_leaves = Leave.objects.filter(employee=employee, leave_type='Sick Leave')
@@ -109,4 +109,7 @@ def employeeProfile(request, pk):
     if user.is_employee:
         employee = Employee.objects.get(id=pk)
         context = {'employee' : employee}
-        return render(request, 'employee_info/employeeProfile.html', context)   
+        return render(request, 'employee_info/employeeProfile.html', context)  
+    
+    else:
+        return render(request, 'users/login.html') 

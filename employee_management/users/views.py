@@ -21,7 +21,7 @@ def loginUser(request):
         password = request.POST.get('password')
         user = User.objects.get(username=username)
         user = authenticate(request=request, username=username, password=password)
-        if user is not None and user.is_employee:
+        if user is not None and user.is_employee and not user.is_admin:
             login(request, user)
             return redirect('employees_site')
         elif user is not None and user.is_admin:
