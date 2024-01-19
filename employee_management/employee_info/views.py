@@ -102,3 +102,11 @@ def employees_site(request):
         return render(request, 'employee_info/employeesPage.html', context)
     else:
         return render(request, 'users/login.html')
+    
+@login_required(login_url='login')
+def employeeProfile(request, pk):
+    user = request.user
+    if user.is_employee:
+        employee = Employee.objects.get(id=pk)
+        context = {'employee' : employee}
+        return render(request, 'employee_info/employeeProfile.html', context)   

@@ -1,0 +1,122 @@
+{% extends "main.html" %}
+
+{% block content %}
+<div class="body">
+    <div class="profile-container">
+        <img class="profile-picture" src="{{request.user.profile_pic.url}}" alt="Profile Picture">
+        <div class="user-info">
+            <h2>{{employee.first_name }} {{employee.last_name}}</h2>
+            <table>
+                <tr>
+                    <th>Role:</th>
+                    <td>{{employee.roll}}</td>
+                </tr>
+                <tr>
+                    <th>Department:</th>
+                    <td>{{employee.department}}</td>
+                </tr>
+                <tr>
+                    <th>Email:</th>
+                    <td>{{employee.email}}</td>
+                </tr>
+                <tr>
+                    <th>Contact Number:</th>
+                    <td>{{employee.contact_number}}</td>
+                </tr>
+                <tr>
+                    <th>Location:</th>
+                    <td>{{employee.address}}</td>
+                </tr>
+                <tr>
+                    <th>Gender:</th>
+                    <td>{{employee.gender}}</td>
+                </tr>
+            </table>
+        </div>
+        <div class="button-container">
+            <button class="edit-button">Edit Profile</button>
+        </div>
+    </div>
+</div>
+    
+<style>
+    .body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f5f5f5;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 85vh;
+    }
+
+    .profile-container {
+        background-color: #fff;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        padding: 40px;
+        border-radius: 10px;
+        text-align: center;
+        max-width: 600px;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .profile-picture {
+        border-radius: 50%;
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+        margin-bottom: 20px;
+        border: 5px solid #3498db;
+    }
+
+    .user-info {
+        margin-bottom: 20px;
+        color: #333;
+    }
+
+    .user-info h2 {
+        margin: 0;
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    table {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    th, td {
+        padding: 10px;
+        text-align: left;
+    }
+
+    th {
+        font-weight: bold;
+        color: #555;
+    }
+
+    .button-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .edit-button {
+        background-color: #3498db;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        margin: 0 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        font-size: 16px;
+    }
+
+    .edit-button:hover {
+        background-color: #2980b9;
+    }
+</style>
+{% endblock content %}

@@ -50,9 +50,9 @@
           />
           <img src="{{request.user.profile_pic.url}}" alt="" class="img-6">
           <div class="div-4">
-            {{request.user}}
+           <a href="{% url 'employee_profile' request.user.employee.id %}">{{request.user}}</a> 
             <br />
-            {{request.user.email}}
+            {{request.user.employee.email}}
           </div>
         </span>
       </div>
