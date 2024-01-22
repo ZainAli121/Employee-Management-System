@@ -2,39 +2,52 @@
 
 {% block content %}
 <div class="body">
-    <div class="profile-container">
-        <img class="profile-picture" src="{{request.user.profile_pic.url}}" alt="Profile Picture">
-        <div class="user-info">
-            <h2>{{employee.first_name }} {{employee.last_name}}</h2>
-            <table>
-                <tr>
-                    <th>Role:</th>
-                    <td>{{employee.roll}}</td>
-                </tr>
-                <tr>
-                    <th>Department:</th>
-                    <td>{{employee.department}}</td>
-                </tr>
-                <tr>
-                    <th>Email:</th>
-                    <td>{{employee.email}}</td>
-                </tr>
-                <tr>
-                    <th>Contact Number:</th>
-                    <td>{{employee.contact_number}}</td>
-                </tr>
-                <tr>
-                    <th>Location:</th>
-                    <td>{{employee.address}}</td>
-                </tr>
-                <tr>
-                    <th>Gender:</th>
-                    <td>{{employee.gender}}</td>
-                </tr>
-            </table>
+    <div class="info-container">
+        <div class="profile-container">
+            <img class="profile-picture" src="{{request.user.profile_pic.url}}" alt="Profile Picture">
+            <div class="user-info">
+                <h2>{{employee.first_name}} {{employee.last_name}}</h2>
+                <table>
+                    <tr>
+                        <th>Role:</th>
+                        <td>{{employee.roll}}</td>
+                    </tr>
+                    <tr>
+                        <th>Department:</th>
+                        <td>{{employee.department}}</td>
+                    </tr>
+                    <tr>
+                        <th>Email:</th>
+                        <td>{{employee.email}}</td>
+                    </tr>
+                    <tr>
+                        <th>Contact Number:</th>
+                        <td>{{employee.contact_number}}</td>
+                    </tr>
+                    <tr>
+                        <th>Location:</th>
+                        <td>{{employee.address}}</td>
+                    </tr>
+                    <tr>
+                        <th>Gender:</th>
+                        <td>{{employee.gender}}</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="button-container">
+                <button class="edit-button">Edit Profile</button>
+            </div>
         </div>
-        <div class="button-container">
-            <button class="edit-button">Edit Profile</button>
+        
+        <div class="performance-container">
+            <h2>Performance Evaluations</h2>
+            {% for performance in performances %}
+            <div class="evaluation-item">
+                <p>Date: {{performance.date}}</p>
+                <p>Rating: {{performance.rating}}/5</p>
+                <p>Comments: {{performance.comments}}</p>
+            </div>
+            {% endfor %}
         </div>
     </div>
 </div>
@@ -48,7 +61,25 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 85vh;
+        height: 100vh;
+    }
+
+    .info-container {
+        display: flex;
+        justify-content: space-between;
+        max-width: 800px;
+        width: 100%;
+        margin-top: 120px;
+    }
+
+    .user-info div {
+        margin-top: 20px;
+    }
+
+    .user-info p {
+        margin: 0;
+        font-size: 16px;
+        color: #555;
     }
 
     .profile-container {
@@ -57,8 +88,7 @@
         padding: 40px;
         border-radius: 10px;
         text-align: center;
-        max-width: 600px;
-        width: 100%;
+        width: 40%; 
         overflow: hidden;
     }
 
@@ -117,6 +147,37 @@
 
     .edit-button:hover {
         background-color: #2980b9;
+    }
+
+    .performance-container {
+        background-color: #f9f9f9;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        border-radius: 10px;
+        text-align: left;
+        width: 40%;
+        overflow: hidden;
+    }
+
+    .performance-container h2 {
+        margin-bottom: 20px;
+        font-size: 24px;
+        color: #333;
+    }
+
+    .evaluation-item {
+        border-bottom: 1px solid #ddd;
+        padding: 15px 0;
+    }
+
+    .evaluation-item p {
+        margin: 0;
+        font-size: 16px;
+        color: #555;
+    }
+
+    .evaluation-item:last-child {
+        border-bottom: none;
     }
 </style>
 {% endblock content %}

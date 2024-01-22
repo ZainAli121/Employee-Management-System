@@ -2,6 +2,7 @@ from django.shortcuts import render
 from .models import *
 from attendence.models import *
 from leave_requests.models import *
+from performance_evaluations.models import *
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
@@ -108,7 +109,8 @@ def employeeProfile(request, pk):
     user = request.user
     if user.is_employee:
         employee = Employee.objects.get(id=pk)
-        context = {'employee' : employee}
+        performances = PerformanceEvaluation.objects.filter(employee=employee)
+        context = {'employee' : employee, 'performances' : performances}
         return render(request, 'employee_info/employeeProfile.html', context)  
     
     else:
