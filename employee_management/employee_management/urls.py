@@ -9,6 +9,7 @@ urlpatterns = [
     path('attendence/', include('attendence.urls')),
     path('apply_leave/', include('leave_requests.urls')),
     path('', include('users.urls')),
+    path('api/', include('api.urls')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

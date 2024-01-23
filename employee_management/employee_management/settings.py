@@ -32,6 +32,8 @@ INSTALLED_APPS = [
     'leave_requests',
     'performance_evaluations',
     'users',
+    'api',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
