@@ -7,9 +7,7 @@ def getRoutes(request):
     routes = [
         'api/employees/',
         'api/employees/<str:pk>/',
-        'api/employees/create/',
-        'api/employees/<str:pk>/update/',
-        'api/employees/<str:pk>/delete/',
+        'api/attendence/'
     ]
     return Response(routes)
 
@@ -23,4 +21,10 @@ def getEmployees(request):
 def getEmployee(request, pk):
     employee = Employee.objects.get(id=pk)
     serializer = EmployeeSerializer(employee, many=False)
+    return Response(serializer.data)
+
+@api_view(['GET'])
+def getAttList(request):
+    att = Attendence.objects.all()
+    serializer = AttendenceSerializer(att, many=True)
     return Response(serializer.data)
